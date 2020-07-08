@@ -18,7 +18,11 @@ app.use(
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  context: ({ req }) => {
+    const user = req.user || null;
+    return { user };
+  }
 });
 
 server.applyMiddleware({ app });
