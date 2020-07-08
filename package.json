@@ -1,0 +1,22 @@
+{
+  "name": "basic-apollo-auth-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "server": "nodemon -r esm ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.15.1",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "graphql-middleware": "^4.0.2",
+    "graphql-shield": "^7.3.2",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.4"
+  }
+}
