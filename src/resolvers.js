@@ -6,6 +6,9 @@ export default {
   Query: {
     user(parent, { id }) {
       return users.find(user => user.id === id);
+    },
+    viewer(parent, args, { user }) {
+      return users.find(({ id }) => id === user.sub);
     }
   },
   Mutation: {
