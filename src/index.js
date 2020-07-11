@@ -1,7 +1,9 @@
-import { ApolloServer } from "apollo-server-express";
+import { ApolloServer, makeExecutableSchema } from "apollo-server-express";
+import { applyMiddleware } from "graphql-middleware";
 import express from "express";
 import expressJwt from "express-jwt";
 
+import permissions from "./permissions";
 import resolvers from "./resolvers";
 import typeDefs from "./typeDefs";
 
@@ -17,8 +19,10 @@ app.use(
 );
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema: applyMiddleware(
+    makeExecutableSchema({ typeDefs, resolvers }),
+    permissions
+  ),
   context: ({ req }) => {
     const user = req.user || null;
     return { user };
