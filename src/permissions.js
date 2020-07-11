@@ -12,3 +12,15 @@ function checkPermission(user, permission) {
 const isAuthenticated = rule()((parent, args, { user }) => {
   return user !== null;
 });
+
+const canReadAnyUser = rule()((parent, args, { user }) => {
+  return checkPermission(user, "read:any_user");
+});
+
+const canReadOwnUser = rule()((parent, args, { user }) => {
+  return checkPermission(user, "read:own_user");
+});
+
+const isReadingOwnUser = rule()((parent, { id }, { user }) => {
+  return user && user.sub === id;
+});
