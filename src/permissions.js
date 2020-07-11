@@ -24,3 +24,10 @@ const canReadOwnUser = rule()((parent, args, { user }) => {
 const isReadingOwnUser = rule()((parent, { id }, { user }) => {
   return user && user.sub === id;
 });
+
+export default shield({
+  Query: {
+    user: or(and(canReadOwnUser, isReadingOwnUser), canReadAnyUser),
+    viewer: isAuthenticated
+  }
+});
