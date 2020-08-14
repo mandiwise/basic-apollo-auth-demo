@@ -8,6 +8,4 @@ npm i && npm run server
 
 **Code Along:**
 
-```sh
 [Watch the recording of the talk here](https://youtu.be/dBuU61ABEDs) or [read the accompanying written tutorial on Dev.to here](https://dev.to/mandiwise/how-to-auth-securing-your-graphql-api-with-confidence-14j) 👩‍💻
-```
