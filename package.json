@@ -13,7 +13,7 @@
   "dependencies": {
     "apollo-server-express": "^2.15.1",
     "esm": "^3.2.25",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-jwt": "^6.0.0",
     "graphql": "^15.3.0",
     "graphql-middleware": "^4.0.2",
